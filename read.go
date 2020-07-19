@@ -43,10 +43,10 @@ func ReadFileWithBuffers(path string, currentLine int, beforeLinesAmount int, af
 	lineIndex := 1
 
 	for scanner.Next() {
-		line, err := scanner.Get()
+		line := scanner.Get()
 
-		if err != nil {
-			return lines, err
+		if scanner.Error() != nil {
+			return lines, scanner.Error()
 		}
 
 		if lineIndex >= firstLine && lineIndex < currentLine {

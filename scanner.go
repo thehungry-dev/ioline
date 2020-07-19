@@ -9,7 +9,7 @@ import (
 // Scanner provides methods to read the entire file line-by-line, omitting newline character
 type Scanner interface {
 	Next() bool
-	Get() (string, error)
+	Get() string
 	Error() error
 	HasError() bool
 }
@@ -54,8 +54,8 @@ func (iterator *linesIterator) HasError() bool {
 }
 
 // Get the current line the iterator is positioned at
-func (iterator *linesIterator) Get() (string, error) {
-	return iterator.line, iterator.err
+func (iterator *linesIterator) Get() string {
+	return iterator.line
 }
 
 // NewScanner starts a new `Scanner` for the provided `io.Reader`

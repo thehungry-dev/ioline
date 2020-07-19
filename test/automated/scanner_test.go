@@ -18,10 +18,10 @@ func TestScanner(t *testing.T) {
 				var lines []string
 
 				for scanner.Next() {
-					line, err := scanner.Get()
+					line := scanner.Get()
 					lines = append(lines, line)
-					if err != nil {
-						scannerErr = err
+					if scanner.Error() != nil {
+						scannerErr = scanner.Error()
 					}
 				}
 
@@ -46,10 +46,10 @@ func TestScanner(t *testing.T) {
 				var lines []string
 
 				for scanner.Next() {
-					line, err := scanner.Get()
+					line := scanner.Get()
 					lines = append(lines, line)
-					if err != nil {
-						scannerErr = err
+					if scanner.Error() != nil {
+						scannerErr = scanner.Error()
 					}
 				}
 
