@@ -13,7 +13,7 @@ func (errorReader) Read([]byte) (int, error) {
 }
 
 // ErrErrorReader represents the error returned by an `ErrorReader`
-var ErrErrorReader = errors.New("Error reader")
+var ErrErrorReader error = errors.New("Error reader")
 
 // ErrorReader is an `io.Reader` that returns an error every time an attempt to read is performed
 func ErrorReader() io.Reader {

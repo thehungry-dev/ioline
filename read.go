@@ -12,6 +12,11 @@ type Line struct {
 	After     []string
 }
 
+// Count the total number of lines
+func (line Line) Count() int {
+	return 1 + len(line.Before) + len(line.After)
+}
+
 // ReadFile gets the specified line from the file at the provided path
 func ReadFile(path string, currentLine int) (string, error) {
 	line, err := ReadFileWithBuffers(path, currentLine, 0, 0)
