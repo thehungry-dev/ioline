@@ -29,3 +29,7 @@ scanner.Error() // Last error
 scanner.HasError() // True if an error happened
 
 ```
+
+## TODO
+
+- [ ] Remove `err` from `Get` call
